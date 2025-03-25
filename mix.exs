@@ -22,9 +22,9 @@ defmodule Remix.Mixfile do
   defp package do
     [
       licenses: ["Apache 2.0"],
-      maintainers: ["Alan Peabody", "Mike Westbom", "Jordan Morano", "Brendan Fey"],
+      maintainers: ["Fenix Tubluk"],
       links: %{
-        "GitHub" => "https://github.com/AgilionApps/remix"
+        "GitHub" => "https://github.com/FenixTubluk/remix"
       }
     ]
   end
