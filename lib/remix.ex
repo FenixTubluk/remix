@@ -4,11 +4,9 @@ defmodule Remix do
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
   def start(_type, _args) do
-    import Supervisor.Spec, warn: false
-
     children = [
       # Define workers and child supervisors to be supervised
-      worker(Remix.Worker, [])
+      {Remix.Worker, []}
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
@@ -23,6 +21,10 @@ defmodule Remix do
     def start_link do
       Process.send_after(__MODULE__, :poll_and_reload, 10000)
       GenServer.start_link(__MODULE__, %{}, name: Remix.Worker)
+    end
+
+    def init(init_arg) do
+      {:ok, init_arg}
     end
 
     def handle_info(:poll_and_reload, state) do
