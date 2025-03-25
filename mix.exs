@@ -3,7 +3,7 @@ defmodule Remix.Mixfile do
 
   def project do
     [app: :remix,
-     version: "0.0.3",
+     version: "0.0.5",
      elixir: "~> 1.0",
      package: package(),
      description: description(),
